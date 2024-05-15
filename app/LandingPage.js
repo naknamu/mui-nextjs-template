@@ -15,7 +15,6 @@ import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import getLPTheme from './getLPTheme';
-import { setCookie } from 'cookies-next';
 
 export default function LandingPage() {
   const [mode, setMode] = React.useState('dark');
@@ -24,8 +23,6 @@ export default function LandingPage() {
   const toggleColorMode = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
-
-  setCookie('mode', mode);
 
   React.useEffect(() => {
     localStorage.setItem('mode', mode);
