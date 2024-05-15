@@ -40,6 +40,12 @@ export default function SignInSide() {
     setMode(localStorage.getItem("mode"));
   }, []);
 
+  const defaultTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -48,12 +54,6 @@ export default function SignInSide() {
       password: data.get("password"),
     });
   };
-
-  const defaultTheme = createTheme({
-    palette: {
-      mode: mode,
-    },
-  });
 
   return (
     <ThemeProvider theme={defaultTheme}>
